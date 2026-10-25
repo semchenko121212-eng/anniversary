@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Три года вместе</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#050102;--wine:#4a0b17;--crim:#b3122b;--ember:#f2a64e;--cream:#f3e4d8;--mute:#b99a8c}
+*{box-sizing:border-box}
+html{background:var(--ink)}
+body{margin:0;color:var(--cream);font-family:'Manrope',system-ui,sans-serif;font-size:17px;line-height:1.7;overflow-x:hidden;-webkit-text-size-adjust:100%}
+#bg,#vig{position:fixed;inset:0;pointer-events:none}
+#bg{z-index:0;overflow:hidden}
+#vig{z-index:1;background:radial-gradient(ellipse at 50% 42%,transparent 0,rgba(5,1,2,.7) 100%)}
+.h{position:absolute;top:0;background:center/contain no-repeat;will-change:transform,opacity;animation:rise var(--d) linear infinite,glow var(--g) ease-in-out infinite;animation-delay:var(--dl),0s}
+@keyframes rise{from{transform:translate3d(0,112vh,0) rotate(var(--r0)) scale(.9)}to{transform:translate3d(var(--dx),-40vh,0) rotate(var(--r1)) scale(1.15)}}
+@keyframes glow{0%,100%{opacity:var(--o1)}50%{opacity:var(--o2)}}
+main,#hero,#finw{position:relative;z-index:2}
+#finw{max-width:1040px;margin:0 auto;padding:0 22px}
+#hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}
+#hero h1{font:italic 600 clamp(72px,19vw,220px)/.9 'Cormorant Garamond',Georgia,serif;margin:0;letter-spacing:-.02em;text-shadow:0 0 40px rgba(179,18,43,.9),0 0 120px rgba(242,166,78,.35)}
+#hero p{margin:28px 0 0;color:var(--mute);font-size:15px}
+#hero i{display:block;width:1px;height:64px;margin-top:40px;background:linear-gradient(var(--ember),transparent);animation:nudge 2.2s ease-in-out infinite}
+@keyframes nudge{50%{transform:translateY(12px);opacity:.4}}
+main{max-width:1040px;margin:0 auto;padding:0 22px 0 54px;--p:0%}
+main::before,main::after{content:"";position:absolute;left:26px;top:0;width:2px}
+main::before{bottom:0;background:rgba(242,166,78,.14)}
+main::after{height:var(--p);background:linear-gradient(var(--ember),var(--crim));box-shadow:0 0 14px var(--crim)}
+.ch{position:relative;padding:96px 0 40px}
+.ch::before{content:"";position:absolute;left:-35px;top:112px;width:16px;height:16px;border-radius:50%;background:var(--ember);box-shadow:0 0 0 6px rgba(242,166,78,.15),0 0 24px var(--ember)}
+h2{font:italic 600 clamp(38px,7vw,72px)/1.05 'Cormorant Garamond',Georgia,serif;margin:0 0 14px;text-shadow:0 0 28px rgba(179,18,43,.7)}
+.tx{max-width:34em;margin:0 0 44px;color:var(--mute)}
+.grid{display:grid;grid-template-columns:1fr;gap:40px}
+.ph{margin:0;opacity:0;filter:blur(18px);transform:scale(.88) rotate(var(--r));transition:opacity 1.3s,filter 1.5s,transform 1.6s cubic-bezier(.2,.8,.2,1)}
+.ph.in{opacity:1;filter:blur(0);transform:rotate(var(--r))}
+.ph img,.ph .fake{display:block;width:100%;height:auto;border-radius:14px;box-shadow:0 0 0 1px rgba(242,166,78,.28),0 20px 60px rgba(179,18,43,.38)}
+.ph .fake{aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;color:var(--mute);background:radial-gradient(circle at 50% 40%,var(--wine),#120307)}
+.ph figcaption:empty{display:none}
+.ph video{display:block;width:100%;height:auto;max-height:80vh;border-radius:14px;background:#000;box-shadow:0 0 0 1px rgba(242,166,78,.28),0 20px 60px rgba(179,18,43,.38)}
+.cvw,.cvl{display:flex;flex-direction:column;gap:40px}.cvr{order:-1}.cvl .ph{margin-top:0!important}
+.ph figcaption{margin-top:12px;font:italic 500 20px/1.3 'Cormorant Garamond',Georgia,serif;color:var(--cream)}
+#fin{padding:110px 0 140px;text-align:center}
+#fin .vw{max-width:780px;margin:36px auto 0;border-radius:20px;overflow:hidden;background:#000;box-shadow:0 0 0 1px rgba(242,166,78,.35),0 0 90px rgba(179,18,43,.5)}
+#fin video{display:block;width:100%;max-height:78vh;background:#000}
+#fin .tx{margin:0 auto}
+#err{margin-top:14px;font-size:14px;color:var(--ember);min-height:1.5em}
+.vids{margin-top:56px}
+@media(min-width:760px){
+ .cvw{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}.cvr{order:0;position:sticky;top:12vh}.cvl .ph:nth-child(even){margin-left:36px}
+ main{padding-left:90px}main::before,main::after{left:44px}.ch::before{left:-53px}
+ .grid{grid-template-columns:1fr 1fr;gap:56px 48px}.ph:nth-child(even){margin-top:64px}
+}
+@media(prefers-reduced-motion:reduce){.h,#hero i{animation:none}.ph{transition:none;opacity:1;filter:none}}
+</style>
+</head>
+<body>
+<div id="bg"></div><div id="vig"></div>
+<section id="hero"><h1>Три года</h1><p>Листай вниз. Здесь всё, что у нас было.</p><i></i></section>
+<main id="main"></main>
+<div id="finw"><section id="fin">
+  <h2>С годовщиной, любимая</h2>
+  <p class="tx">Я записал для тебя кое-что. Включи звук.</p>
+  <div class="vw"><video id="vid" src="media/anniversary.mp4#t=0.1" controls playsinline preload="metadata"></video></div>
+  <div id="err"></div>
+</section></div>
+<script>
+/* ===== Меняй здесь: названия глав, тексты, фото и подписи ===== */
+const CH=[
+ {t:'Наше первое знакомство',x:'Эти первые прогулки с тобой были для меня что-то нечто, меня переполняло много разных эмоций, и тогда я уже начал понимать, что я люблю тебя.',p:[['photos/1-1.jpg',''],['photos/1-2.jpg',''],['photos/1-3.jpg','']]},
+ {t:'Наш первый год',x:'Я тогда был на седьмом небе от счастья. Я так был рад, что у меня появилась ты, моё солнышко.',v:'media/year1.mp4',p:[['photos/2-1.jpg',''],['photos/2-2.jpg',''],['photos/2-3.jpg',''],['photos/2-4.jpg','']]},
+ {t:'Наш второй год',x:'Во второй год мы смотрели друг на друга уже без розовых очков: всплывали недостатки и непростые моменты. Но мы прошли через это и приняли друг друга такими, какие мы есть. Это и называется настоящей любовью. Мы сохранили наши отношения и стали только ближе.',v:'media/year2.mp4',p:[['photos/3-1.jpg',''],['photos/3-2.jpg',''],['photos/3-3.jpg',''],['photos/3-4.jpg','']]},
+ {t:'Два с половиной года',x:'Солнышко моё, за это время я понял, что люблю тебя очень сильно. Ты самый родной человек для меня на всём свете. Я хочу быть с тобой 24/7, я безумно по тебе скучаю и не представляю свою будущую жизнь без тебя.',vs:['media/year3-1.mp4','media/year3-2.mp4','media/year3-3.mp4','media/year3-4.mp4'],p:[['photos/4-1.jpg',''],['photos/4-2.jpg',''],['photos/4-3.jpg',''],['photos/4-4.jpg',''],['photos/4-5.jpg',''],['photos/4-6.jpg',''],['photos/4-7.jpg',''],['photos/4-8.jpg',''],['photos/4-9.jpg',''],['photos/4-10.jpg',''],['photos/4-11.jpg','']]}
+];
+/* ================================================================ */
+const $=s=>document.querySelector(s);
+/* размытые светящиеся сердца: рисуем один раз, потом они просто плывут вверх */
+function heart(color,blur){
+  const S=360,k=document.createElement('canvas');k.width=k.height=S;const x=k.getContext('2d'),r=64,OFF=1200;
+  x.shadowColor=color;x.shadowBlur=blur;x.shadowOffsetX=OFF;x.fillStyle=color;
+  for(let n=0;n<3;n++){x.beginPath();x.moveTo(S/2-OFF,S/2+r*.95);
+    x.bezierCurveTo(S/2-OFF-r*1.35,S/2+r*.1,S/2-OFF-r*.95,S/2-r*.85,S/2-OFF,S/2-r*.35);
+    x.bezierCurveTo(S/2-OFF+r*.95,S/2-r*.85,S/2-OFF+r*1.35,S/2+r*.1,S/2-OFF,S/2+r*.95);x.fill()}
+  return k.toDataURL();
+}
+const SP=[heart('rgba(179,18,43,1)',70),heart('rgba(110,10,30,1)',80),heart('rgba(242,166,78,1)',60),heart('rgba(220,40,60,1)',64)];
+const W=[0,0,0,1,1,3,3,2],rnd=(a,b)=>a+Math.random()*(b-a);
+[[7,120,230,70,34,.28,.5],[7,230,360,46,28,.3,.55],[5,360,540,34,22,.34,.6]].forEach(([n,a,b,dur,ps,o1,o2])=>{
+  for(let i=0;i<n;i++){const d=document.createElement('div'),z=rnd(a,b);d.className='h';
+    d.style.cssText=`left:${rnd(-8,96)}%;width:${z}px;height:${z}px;background-image:url(${SP[W[Math.floor(rnd(0,W.length))]]});--d:${dur+rnd(-8,10)}s;--dl:-${rnd(0,dur)}s;--g:${ps+rnd(-6,6)}s;--o1:${o1};--o2:${o2};--dx:${rnd(-120,120)}px;--r0:${rnd(-25,25)}deg;--r1:${rnd(-25,25)}deg`;
+    $('#bg').appendChild(d)}
+});
+/* главы */
+const fig=(s,cap,i,j)=>`<figure class="ph" style="--r:${((i*3+j)%5-2)*1.1}deg"><img src="${s}" alt="" loading="lazy"><figcaption>${cap}</figcaption></figure>`;
+$('#main').innerHTML=CH.map((c,i)=>{const ph=c.p.map(([s,cap],j)=>fig(s,cap,i,j)).join('');
+  return `<section class="ch"><h2>${c.t}</h2><p class="tx">${c.x}</p>`+(c.v?`<div class="cvw"><div class="cvl">${ph}</div><aside class="cvr"><figure class="ph" style="--r:0deg"><video src="${c.v}#t=0.1" controls playsinline preload="metadata"></video></figure></aside></div>`:`<div class="grid">${ph}</div>`)+(c.vs?`<div class="grid vids">${c.vs.map(u=>`<figure class="ph" style="--r:0deg"><video src="${u}#t=0.1" controls playsinline preload="metadata"></video></figure>`).join('')}</div>`:'')+`</section>`}).join('');
+document.querySelectorAll('.cvr video,.vids video').forEach(v=>{v.onerror=()=>v.replaceWith(Object.assign(document.createElement('div'),{className:'fake',textContent:'здесь будет видео'}))});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.18,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.ph').forEach(f=>{
+  const im=f.querySelector('img'),fail=()=>{im.replaceWith(Object.assign(document.createElement('div'),{className:'fake',textContent:'здесь будет фото'}))};
+  if(im){im.onerror=fail;if(im.complete&&!im.naturalWidth&&im.getAttribute('src'))fail()}io.observe(f);
+});
+/* линия времени заполняется, пока листаешь */
+const mn=$('#main');let tick=false;
+function prog(){tick=false;const r=mn.getBoundingClientRect(),h=r.height,p=Math.max(0,Math.min(1,(innerHeight*.6-r.top)/h));mn.style.setProperty('--p',(p*100)+'%')}
+addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(prog)}},{passive:true});prog();
+/* видео */
+$('#vid').onerror=()=>{$('#err').textContent='Видео пока не добавлено: положи файл media/anniversary.mp4'};
+</script>
+</body>
+</html>
